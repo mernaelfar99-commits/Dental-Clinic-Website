@@ -346,6 +346,10 @@ html[dir="ltr"] h4 {
   letter-spacing: 2px;
   text-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
   opacity: 0;
+
+    width: 100%;
+    text-align: center;
+    line-height: 1.2;
 }
 
 #loader .loader-tag {
@@ -1147,5 +1151,24 @@ footer a:hover {
   footer a {
     text-align: center;
   }
+
+}
+
+@media (max-width: 768px) {
+
+    #loader .loader-logo {
+        width: 100%;
+        text-align: center;
+        font-size: 22px;
+        line-height: 1.3;
+        padding: 0 20px;
+        word-break: break-word;
+    }
+
+    #loader .loader-tag {
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
+    }
 
 }
