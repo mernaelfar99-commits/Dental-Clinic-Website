@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Responsive Stylesheet
+   ========================================================================== */
+
+/* ---------- Tablets & below (≤ 992px) ---------- */
+@media (max-width: 992px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Small tablets / large phones (≤ 900px) ---------- */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .emergency {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+}
+
+/* ---------- Mobile (≤ 640px) ---------- */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .masonry {
+    columns: 2 160px;
+  }
+
+  .hero-buttons,
+  .hero-tags {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .ba-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    padding: 150px 0 60px;
+  }
+}
+
+/* ---------- Extra small (≤ 400px) ---------- */
+@media (max-width: 400px) {
+  .heading-xl {
+    font-size: 28px;
+  }
+
+  .btn {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+
+  .floating {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  html[dir="rtl"] .floating {
+    left: 16px;
+  }
+}

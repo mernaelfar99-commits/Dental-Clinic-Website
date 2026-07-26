@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Animations Stylesheet
+   ========================================================================== */
+
+/* ---------- Scroll Reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.2, 1),
+              transform 0.9s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+html[dir="rtl"] .reveal-left {
+  transform: translateX(50px);
+}
+
+.reveal-left.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+html[dir="rtl"] .reveal-right {
+  transform: translateX(-50px);
+}
+
+.reveal-right.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- Loader ---------- */
+@keyframes logoIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes tagIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#loader .loader-logo {
+  animation: logoIn 1.4s ease forwards;
+}
+
+#loader .loader-tag {
+  animation: tagIn 1.4s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+.particle {
+  animation: floatParticle 6s infinite ease-in-out;
+}
+
+/* ---------- Hero floating orbs ---------- */
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+.hero::before {
+  animation: floatOrb 8s infinite ease-in-out;
+}
+
+.hero::after {
+  animation: floatOrb 10s infinite ease-in-out reverse;
+}
+
+/* ---------- Emergency pulse ---------- */
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+}
+
+.emergency-badge {
+  animation: pulseGold 2s infinite;
+}
+
+/* ---------- Success check pop ---------- */
+@keyframes pop {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.success-anim .check {
+  animation: pop 0.5s ease;
+}
+
+/* ---------- Fade in page transition ---------- */
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: pageFadeIn 0.6s ease;
+}
+
+/* ---------- Card hover lift is handled via transition in style.css ---------- */
+
+/* ---------- Marquee-style badge shimmer (subtle, gold) ---------- */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--color-charcoal) 25%, var(--color-gold) 50%, var(--color-charcoal) 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
