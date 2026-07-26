@@ -1128,3 +1128,24 @@ footer a:hover {
     unicode-bidi:plaintext;
     display:inline-block;
 }
+
+/* ---------- Footer Responsive ---------- */
+
+@media (max-width: 768px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-about p {
+    max-width: 100%;
+    margin: 14px auto 0;
+  }
+
+  footer a {
+    text-align: center;
+  }
+
+}
