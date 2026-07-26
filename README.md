@@ -91,7 +91,7 @@ Dental-Clinic-Website/
 1. **Phone / WhatsApp number** — currently `+201035120194` in every page's floating buttons, footer, and `assets/js/booking.js` (`CLINIC_WHATSAPP_NUMBER`). Search-and-replace across all files.
 2. **Images** — drop real photos into the matching `assets/images/...` subfolders using the same filenames referenced in the HTML (e.g. `assets/images/doctor/dr-abdurahman.jpg`). Until replaced, the `about-photo` block will show gracefully with a gold gradient fallback.
 3. **Google Maps embeds** — in `locations.html`, replace the two `iframe src` query strings with the clinic's exact address or Place ID for pinpoint accuracy.
-4. **Email / social links** — update `info@dr-abdurahman-clinic.com`, Instagram, Facebook, and Messenger links in `contact.html` and the footer of every page.
+4. **Email / social links** — update `Ab.m.dent.clinic@gmail.com`, Instagram, Facebook, and Messenger links in `contact.html` and the footer of every page.
 5. **Booking form backend** — `assets/js/booking.js` currently shows a success animation client-side only. Connect the `submit` handler to your booking API / email service (e.g. Formspree, a serverless function, or your CRM) before going live.
 
 ---
