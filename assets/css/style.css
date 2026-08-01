@@ -471,7 +471,7 @@ html[dir="ltr"] h4 {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: radial-gradient(ellipse at top, rgba(212, 175, 55, 0.15), transparent 60%), linear-gradient(160deg, #fff 0%, var(--color-ivory) 60%);
+  background: url("../images/hero/hero-clinic-branding.jpg") center/cover no-repeat, radial-gradient(ellipse at top, rgba(212, 175, 55, 0.15), transparent 60%), linear-gradient(160deg, #fff 0%, var(--color-ivory) 60%);
   overflow: hidden;
   text-align: center;
 }
