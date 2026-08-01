@@ -920,6 +920,12 @@ html[dir="ltr"] h4 {
   background: transparent;
   font-size: 13px;
   font-weight: 600;
+  transition: var(--transition-base);
+}
+
+.gallery-filters button:hover {
+  transform: translateY(-1px);
+  background: rgba(212, 175, 55, 0.1);
 }
 
 .gallery-filters button.active {
@@ -1001,6 +1007,12 @@ html[dir="ltr"] h4 {
   border: 1px solid var(--color-gold);
   background: transparent;
   font-weight: 600;
+  transition: var(--transition-base);
+}
+
+.mini-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(212, 175, 55, 0.08);
 }
 
 /* ---------- Booking Form ---------- */

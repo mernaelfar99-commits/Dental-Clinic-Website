@@ -54,6 +54,222 @@
   }
 }
 
+/* ---------- Small phones / phablets (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .hero {
+    min-height: auto;
+    background-position: top center;
+  }
+
+  .hero-content {
+    padding: 92px 18px 44px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 46px);
+  }
+
+  .hero-tags {
+    font-size: 14px;
+    gap: 10px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: none;
+  }
+
+  .mobile-menu-panel {
+    width: min(94vw, 100%);
+    max-width: 100%;
+    inset: 16px;
+    padding: 28px 20px 24px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-head {
+    margin-bottom: 38px;
+    padding: 0 8px;
+  }
+
+  .section-sub {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .page-header {
+    padding: 130px 0 50px;
+  }
+
+  .card {
+    padding: 28px 22px;
+  }
+
+  .icon-circle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .badge {
+    padding: 8px 14px;
+  }
+
+  .about-grid,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .review-track {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    overflow-x: visible;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .review-card {
+    min-width: auto;
+    padding: 24px;
+  }
+
+  .ba-wrap {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ba-image {
+    height: 300px;
+  }
+
+  .ba-slider {
+    width: 4px;
+  }
+
+  .ba-slider::after {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .ba-meta {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    gap: 10px;
+    margin-left: -6px;
+    padding-left: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-filters button {
+    min-width: max-content;
+  }
+
+  .masonry {
+    columns: 2 180px;
+    gap: 16px;
+  }
+
+  .masonry .item {
+    height: auto;
+  }
+
+  .masonry .item:nth-child(3n),
+  .masonry .item:nth-child(4n) {
+    height: auto;
+  }
+
+  .booking-form,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .booking-form {
+    padding: 30px;
+  }
+
+  .branch-actions {
+    justify-content: center;
+  }
+
+  .branch-map iframe {
+    min-height: 220px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .mobile-menu-panel a {
+    font-size: 18px;
+    padding: 12px 0;
+  }
+
+  .floating {
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    right: 12px;
+    gap: 10px;
+  }
+
+  html[dir="rtl"] .floating {
+    left: 12px;
+    right: auto;
+  }
+
+  .fab {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+}
+
 /* ---------- Mobile (≤ 640px) ---------- */
 @media (max-width: 640px) {
   .container {
@@ -76,12 +292,23 @@
 
   .masonry {
     columns: 2 160px;
+    gap: 14px;
   }
 
   .hero-buttons,
   .hero-tags {
     flex-direction: column;
     align-items: center;
+  }
+
+  .ba-slider {
+    width: 4px;
+  }
+
+  .ba-slider::after {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
   }
 
   .navbar {
@@ -122,14 +349,28 @@
     right: 12px;
     gap: 10px;
     transform: scale(0.85);
-}
+  }
 
-html[dir="rtl"] .floating {
+  html[dir="rtl"] .floating {
     left: 12px;
-}
+  }
 
-.fab {
+  .fab {
     width: 46px;
     height: 46px;
-}
+  }
+
+  .gallery-filters {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .gallery-filters button {
+    padding: 10px 14px;
+  }
+
+  .masonry {
+    columns: 1 100%;
+    gap: 16px;
+  }
 }
