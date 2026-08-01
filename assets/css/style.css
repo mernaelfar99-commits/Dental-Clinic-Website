@@ -1121,6 +1121,17 @@ html[dir="rtl"] .floating {
   stroke-linejoin: round;
 }
 
+.fab-wa svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.fab-wa svg path {
+  fill: currentColor;
+}
+
 .fab:hover {
   transform: scale(1.1);
 }
