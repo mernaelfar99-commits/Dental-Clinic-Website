@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <div id="loader">
   <div class="loader-logo">Dr. Abdurahman Moheb</div>
@@ -30,21 +31,23 @@
     <a href="contact.html" class="active" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
     <button class="lang-switch">EN</button>
   </div>
-  <button class="burger">&#9776;</button>
+  <button class="burger" aria-label="Open navigation" aria-expanded="false">☰</button>
 </nav>
 
-<div class="mobile-menu">
-  <button class="mobile-close">&times;</button>
-  <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-  <a href="about.html" data-ar="عن الدكتور" data-en="About">عن الدكتور</a>
-  <a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
-  <a href="before-after.html" data-ar="قبل وبعد" data-en="Before & After">قبل وبعد</a>
-  <a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a>
-  <a href="locations.html" data-ar="الفروع" data-en="Branches">الفروع</a>
-  <a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+<div class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-panel">
+    <button class="mobile-close" aria-label="Close navigation">&times;</button>
+    <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="about.html" data-ar="عن الدكتور" data-en="About">عن الدكتور</a>
+    <a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+    <a href="before-after.html" data-ar="قبل وبعد" data-en="Before & After">قبل وبعد</a>
+    <a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a>
+    <a href="locations.html" data-ar="الفروع" data-en="Branches">الفروع</a>
+    <a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+  </div>
 </div>
 
-<header class="page-header">
+<header class="page-header" id="main-content">
   <div class="container">
     <div class="eyebrow" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</div>
     <h1 class="heading-xl" data-ar="ابدأ رحلة ابتسامتك اليوم" data-en="Start Your Smile Journey Today">ابدأ رحلة ابتسامتك اليوم</h1>
@@ -54,24 +57,24 @@
 <section class="section" id="booking">
   <div class="container">
     <div class="glass booking-panel reveal">
-      <form class="booking-form" id="bookingForm">
+      <form class="booking-form" id="bookingForm" novalidate>
         <div>
-          <label data-ar="الاسم بالكامل" data-en="Full Name">الاسم بالكامل</label>
-          <input required id="f-name" type="text">
+          <label for="f-name" data-ar="الاسم بالكامل" data-en="Full Name">الاسم بالكامل</label>
+          <input required id="f-name" name="name" type="text" autocomplete="name" placeholder="John Doe">
         </div>
         <div>
-          <label data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
-          <input required id="f-phone" type="tel">
+          <label for="f-phone" data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+          <input required id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+20 103 512 0194">
         </div>
         <div>
-          <label data-ar="الفرع" data-en="Branch">الفرع</label>
-          <select id="f-branch">
+          <label for="f-branch" data-ar="الفرع" data-en="Branch">الفرع</label>
+          <select id="f-branch" name="branch">
             <option data-ar="الدقي - القاهرة" data-en="Dokki - Cairo">الدقي - القاهرة</option>
           </select>
         </div>
         <div>
-          <label data-ar="الخدمة المطلوبة" data-en="Treatment">الخدمة المطلوبة</label>
-          <select id="f-treatment">
+          <label for="f-treatment" data-ar="الخدمة المطلوبة" data-en="Treatment">الخدمة المطلوبة</label>
+          <select id="f-treatment" name="treatment">
             <option data-ar="تصميم الابتسامة" data-en="Smile Design">تصميم الابتسامة</option>
             <option data-ar="ابتسامة هوليوود" data-en="Hollywood Smile">ابتسامة هوليوود</option>
             <option data-ar="فينير الأسنان" data-en="Dental Veneers">فينير الأسنان</option>
@@ -85,16 +88,16 @@
           </select>
         </div>
         <div>
-          <label data-ar="التاريخ المفضل" data-en="Preferred Date">التاريخ المفضل</label>
-          <input id="f-date" type="date">
+          <label for="f-date" data-ar="التاريخ المفضل" data-en="Preferred Date">التاريخ المفضل</label>
+          <input id="f-date" name="date" type="date">
         </div>
         <div>
-          <label data-ar="الوقت المفضل" data-en="Preferred Time">الوقت المفضل</label>
-          <input id="f-time" type="time">
+          <label for="f-time" data-ar="الوقت المفضل" data-en="Preferred Time">الوقت المفضل</label>
+          <input id="f-time" name="time" type="time">
         </div>
         <div class="field-wide">
-          <label data-ar="ملاحظات" data-en="Notes">ملاحظات</label>
-          <textarea rows="3" id="f-notes"></textarea>
+          <label for="f-notes" data-ar="ملاحظات" data-en="Notes">ملاحظات</label>
+          <textarea rows="3" id="f-notes" name="notes" placeholder="Share your goals or preferred treatment details"></textarea>
         </div>
         <div class="form-actions">
           <button type="submit" class="btn btn-gold" data-ar="احجز موعد" data-en="Book Appointment">احجز موعد</button>
@@ -118,20 +121,20 @@
       <h2 class="heading-xl" data-ar="نحن هنا لمساعدتك" data-en="We're Here to Help">نحن هنا لمساعدتك</h2>
 
       <div class="card contact-info-card">
-        <div class="icon-circle">&#128172;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M7.9 17.1l.7 1.9 2-.5a10.8 10.8 0 1 0-3.8 1.8l-.8 2.1Z"/></svg></div>
         <div><h3 data-ar="واتساب" data-en="WhatsApp">واتساب</h3><p class="phone-number">+20 103 512 0194</p></div>
       </div>
       <div class="card contact-info-card">
-        <div class="icon-circle">&#128222;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M5.6 4.4a1 1 0 0 1 1-.9h2.4a1 1 0 0 1 .9 1.1l-.4 2.4a1 1 0 0 1-.6.8l-1.5.8a11.5 11.5 0 0 0 5.7 5.7l.8-1.5a1 1 0 0 1 .8-.6l2.4-.4a1 1 0 0 1 1.1.9v2.4a1 1 0 0 1-.9 1h-.1A16.6 16.6 0 0 1 4 4.7Z"/></svg></div>
         <div><h3 data-ar="الهاتف" data-en="Phone">الهاتف</h3><p class="phone-number">+20 103 512 0194</p></div>
       </div>
       <div class="card contact-info-card">
-        <div class="icon-circle">&#9993;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="m4 7 8 7 8-7"/></svg></div>
         <div><h3 data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h3><p>Ab.m.dent.clinic@gmail.com</p></div>
       </div>
       <div class="card contact-info-card">
-        <div class="icon-circle">&#8987;</div>
-        <div><h3 data-ar="مواعيد العمل" data-en="Working Hours">مواعيد العمل</h3><p data-ar="يوميًا 10 ص - 12 م + طوارئ 24 ساعة" data-en="Daily 10 AM - 12 AM + 24H Emergency">يوميًا 10 ص - 12 م + طوارئ 24 ساعة</p></div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><h3 data-ar="مواعيد العمل" data-en="Working Hours">مواعيد العمل</h3><p data-ar="يوميًا من 10 صباحًا حتى 12 منتصف الليل · خدمة طوارئ 24 ساعة" data-en="Daily from 10 AM to 12 Midnight · 24/7 Emergency Service">يوميًا من 10 صباحًا حتى 12 منتصف الليل · خدمة طوارئ 24 ساعة</p></div>
       </div>
     </div>
 
@@ -212,10 +215,10 @@
 </footer>
 
 <div class="floating">
-  <a href="https://wa.me/201035120194" target="_blank" class="fab fab-wa" title="WhatsApp">&#128172;</a>
-  <a href="tel:+201035120194" class="fab fab-call" title="Call">&#128222;</a>
-  <a href="contact.html#booking" class="fab fab-book" title="Book">&#128197;</a>
-  <button class="fab fab-top" id="toTop" title="Top">&#8593;</button>
+  <a href="https://wa.me/201035120194" target="_blank" class="fab fab-wa" title="WhatsApp" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M7.9 17.1l.7 1.9 2-.5a10.8 10.8 0 1 0-3.8 1.8l-.8 2.1Z"/></svg></a>
+  <a href="tel:+201035120194" class="fab fab-call" title="Call" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M5.6 4.4a1 1 0 0 1 1-.9h2.4a1 1 0 0 1 .9 1.1l-.4 2.4a1 1 0 0 1-.6.8l-1.5.8a11.5 11.5 0 0 0 5.7 5.7l.8-1.5a1 1 0 0 1 .8-.6l2.4-.4a1 1 0 0 1 1.1.9v2.4a1 1 0 0 1-.9 1h-.1A16.6 16.6 0 0 1 4 4.7Z"/></svg></a>
+  <a href="contact.html#booking" class="fab fab-book" title="Book" aria-label="Book"><svg viewBox="0 0 24 24"><path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg></a>
+  <button class="fab fab-top" id="toTop" title="Top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></svg></button>
 </div>
 
 <script src="assets/js/language.js"></script>

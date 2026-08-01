@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <div id="loader">
   <div class="loader-logo">Dr. Abdurahman Moheb</div>
@@ -30,21 +31,23 @@
     <a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
     <button class="lang-switch">EN</button>
   </div>
-  <button class="burger">&#9776;</button>
+  <button class="burger" aria-label="Open navigation" aria-expanded="false">☰</button>
 </nav>
 
-<div class="mobile-menu">
-  <button class="mobile-close">&times;</button>
-  <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-  <a href="about.html" data-ar="عن الدكتور" data-en="About">عن الدكتور</a>
-  <a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
-  <a href="before-after.html" data-ar="قبل وبعد" data-en="Before & After">قبل وبعد</a>
-  <a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a>
-  <a href="locations.html" data-ar="الفروع" data-en="Branches">الفروع</a>
-  <a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+<div class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-panel">
+    <button class="mobile-close" aria-label="Close navigation">&times;</button>
+    <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="about.html" data-ar="عن الدكتور" data-en="About">عن الدكتور</a>
+    <a href="services.html" data-ar="الخدمات" data-en="Services">الخدمات</a>
+    <a href="before-after.html" data-ar="قبل وبعد" data-en="Before & After">قبل وبعد</a>
+    <a href="gallery.html" data-ar="المعرض" data-en="Gallery">المعرض</a>
+    <a href="locations.html" data-ar="الفروع" data-en="Branches">الفروع</a>
+    <a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+  </div>
 </div>
 
-<header class="page-header">
+<header class="page-header" id="main-content">
   <div class="container">
     <div class="eyebrow" data-ar="عن الدكتور" data-en="About the Doctor">عن الدكتور</div>
     <h1 class="heading-xl" data-ar="د. عبدالرحمن محب" data-en="Dr. Abdurahman Moheb">د. عبدالرحمن محب</h1>
@@ -70,7 +73,7 @@
       </p>
       <p class="section-sub"
         data-ar="يواصل الدكتور عبدالرحمن تطوير مهاراته من خلال التعليم الطبي المستمر وحضور المؤتمرات وورش العمل الدولية، إيمانًا منه بأن التميز في طب الأسنان رحلة لا تتوقف."
-        data-en="Dr. Abdurahman Moheb continues to develop his skills through continuous medical education and attendance at international conferences and workshops, believing that excellence in dentistry is a journey that never stops.">
+        data-en="Dr. Abdurahman Moheb continues to refine his craft through continuous education, advanced training, and international conferences, believing that excellence in dentistry is an evolving journey.">
         يواصل الدكتور عبدالرحمن تطوير مهاراته من خلال التعليم الطبي المستمر وحضور المؤتمرات وورش العمل الدولية.
       </p>
       <div class="badges">
@@ -94,18 +97,18 @@
       <h2 class="heading-xl" data-ar="تجربة رعاية استثنائية" data-en="An Exceptional Care Experience">تجربة رعاية استثنائية</h2>
     </div>
     <div class="grid-4" id="why-grid">
-      <div class="card reveal"><div class="icon-circle">&#9733;</div><h3 data-ar="خبرة عالية" data-en="Highly Experienced">خبرة عالية</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#10052;</div><h3 data-ar="طب أسنان بلا ألم" data-en="Pain-Free Dentistry">طب أسنان بلا ألم</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#128202;</div><h3 data-ar="تشخيص رقمي" data-en="Digital Diagnosis">تشخيص رقمي</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#9881;</div><h3 data-ar="أحدث التقنيات" data-en="Latest Dental Technology">أحدث التقنيات</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#10024;</div><h3 data-ar="معايير تعقيم فاخرة" data-en="Premium Sterilization">معايير تعقيم فاخرة</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#9786;</div><h3 data-ar="تصميم ابتسامة طبيعية" data-en="Natural Smile Design">تصميم ابتسامة طبيعية</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#128203;</div><h3 data-ar="خطط علاج شخصية" data-en="Personalized Treatment Plans">خطط علاج شخصية</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#128172;</div><h3 data-ar="تواصل شفاف" data-en="Transparent Communication">تواصل شفاف</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#9200;</div><h3 data-ar="رعاية طوارئ" data-en="Emergency Dental Care">رعاية طوارئ</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#9819;</div><h3 data-ar="تجربة مريض فاخرة" data-en="Luxury Patient Experience">تجربة مريض فاخرة</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#9749;</div><h3 data-ar="الراحة أولاً" data-en="Comfort First Philosophy">الراحة أولاً</h3></div>
-      <div class="card reveal"><div class="icon-circle">&#10024;</div><h3 data-ar="تجميل متقدم" data-en="Advanced Cosmetic Dentistry">تجميل متقدم</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.8 6.4 20.2l1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg></div><h3 data-ar="خبرة عالية" data-en="Highly Experienced">خبرة عالية</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 4a6 6 0 0 1 6 6c0 3.8-4 8-4 8S6 13.8 6 10a6 6 0 0 1 6-6Z"/><path d="M12 9.5v2.8"/></svg></div><h3 data-ar="طب أسنان بلا ألم" data-en="Pain-Free Dentistry">طب أسنان بلا ألم</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M7 5v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5"/><path d="M10 19v2"/><path d="M14 19v2"/></svg></div><h3 data-ar="تشخيص رقمي" data-en="Digital Diagnosis">تشخيص رقمي</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M6 7v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7"/><path d="M8 11h8"/></svg></div><h3 data-ar="أحدث التقنيات" data-en="Latest Dental Technology">أحدث التقنيات</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 0 8 8"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/></svg></div><h3 data-ar="معايير تعقيم فاخرة" data-en="Premium Sterilization">معايير تعقيم فاخرة</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M5 9h14"/><path d="M7 9v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9"/><path d="M9 11h6"/><path d="M10 15h4"/></svg></div><h3 data-ar="تصميم ابتسامة طبيعية" data-en="Natural Smile Design">تصميم ابتسامة طبيعية</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg></div><h3 data-ar="خطط علاج شخصية" data-en="Personalized Treatment Plans">خطط علاج شخصية</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="m4 7 8 7 8-7"/></svg></div><h3 data-ar="تواصل شفاف" data-en="Transparent Communication">تواصل شفاف</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></div><h3 data-ar="رعاية طوارئ" data-en="Emergency Dental Care">رعاية طوارئ</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 1 4 4v1h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v2H8v-2H7a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V7a4 4 0 0 1 4-4Z"/><path d="M10 12h4"/></svg></div><h3 data-ar="تجربة مريض فاخرة" data-en="Luxury Patient Experience">تجربة مريض فاخرة</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 5a4 4 0 0 1 4 4c0 3-2 4.5-2 6h-4c0-1.5-2-3-2-6a4 4 0 0 1 4-4Z"/><path d="M9 16h6"/></svg></div><h3 data-ar="الراحة أولاً" data-en="Comfort First Philosophy">الراحة أولاً</h3></div>
+      <div class="card reveal"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 8c0-1 1-2 2-2h12c1 0 2 1 2 2v8c0 1-1 2-2 2H6c-1 0-2-1-2-2Z"/><path d="M8 12h8"/></svg></div><h3 data-ar="تجميل متقدم" data-en="Advanced Cosmetic Dentistry">تجميل متقدم</h3></div>
     </div>
   </div>
 </section>
@@ -118,35 +121,35 @@
     </div>
     <div class="grid-4">
       <div class="card cert-card reveal">
-        <div class="icon-circle">&#127891;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M7 7v10"/><path d="M17 7v10"/><path d="M4 11h16"/></svg></div>
         <h3 data-ar="شهادة جامعة MUST" data-en="MUST University Degree">شهادة جامعة MUST</h3>
       </div>
       <div class="card cert-card reveal">
-        <div class="icon-circle">&#127891;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M7 7v10"/><path d="M17 7v10"/><path d="M4 11h16"/></svg></div>
         <h3 data-ar="زمالة جامعة جنوا الإيطالية" data-en="University of Genoa Fellowship">زمالة جامعة جنوا الإيطالية</h3>
       </div>
       <div class="card cert-card reveal">
-        <div class="icon-circle">&#128196;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg></div>
         <h3 data-ar="شهادات مهنية دولية" data-en="International Certificates">شهادات مهنية دولية</h3>
       </div>
       <div class="card cert-card reveal">
-        <div class="icon-circle">&#127970;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6l-8-3Z"/></svg></div>
         <h3 data-ar="مؤتمرات طب الأسنان" data-en="Dental Conferences">مؤتمرات طب الأسنان</h3>
       </div>
       <div class="card cert-card reveal">
-        <div class="icon-circle">&#128295;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M7 7v10"/><path d="M17 7v10"/><path d="M4 11h16"/></svg></div>
         <h3 data-ar="ورش عمل متخصصة" data-en="Specialized Workshops">ورش عمل متخصصة</h3>
       </div>
       <div class="card cert-card reveal">
-        <div class="icon-circle">&#129309;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M6 4h12v16H6z"/><path d="M9 8h6"/><path d="M9 12h6"/></svg></div>
         <h3 data-ar="عضويات مهنية" data-en="Professional Memberships">عضويات مهنية</h3>
       </div>
       <div class="card cert-card reveal">
-        <div class="icon-circle">&#127942;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.8 6.4 20.2l1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg></div>
         <h3 data-ar="إنجازات مهنية" data-en="Achievements">إنجازات مهنية</h3>
       </div>
       <div class="card cert-card reveal">
-        <div class="icon-circle">&#128218;</div>
+        <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M7 7v10"/><path d="M17 7v10"/><path d="M4 11h16"/></svg></div>
         <h3 data-ar="دورات دولية" data-en="International Courses">دورات دولية</h3>
       </div>
     </div>
@@ -189,10 +192,10 @@
 </footer>
 
 <div class="floating">
-  <a href="https://wa.me/201035120194" target="_blank" class="fab fab-wa" title="WhatsApp">&#128172;</a>
-  <a href="tel:+201035120194" class="fab fab-call" title="Call">&#128222;</a>
-  <a href="contact.html#booking" class="fab fab-book" title="Book">&#128197;</a>
-  <button class="fab fab-top" id="toTop" title="Top">&#8593;</button>
+  <a href="https://wa.me/201035120194" target="_blank" class="fab fab-wa" title="WhatsApp" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M7.9 17.1l.7 1.9 2-.5a10.8 10.8 0 1 0-3.8 1.8l-.8 2.1Z"/></svg></a>
+  <a href="tel:+201035120194" class="fab fab-call" title="Call" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M5.6 4.4a1 1 0 0 1 1-.9h2.4a1 1 0 0 1 .9 1.1l-.4 2.4a1 1 0 0 1-.6.8l-1.5.8a11.5 11.5 0 0 0 5.7 5.7l.8-1.5a1 1 0 0 1 .8-.6l2.4-.4a1 1 0 0 1 1.1.9v2.4a1 1 0 0 1-.9 1h-.1A16.6 16.6 0 0 1 4 4.7Z"/></svg></a>
+  <a href="contact.html#booking" class="fab fab-book" title="Book" aria-label="Book"><svg viewBox="0 0 24 24"><path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg></a>
+  <button class="fab fab-top" id="toTop" title="Top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></svg></button>
 </div>
 
 <script src="assets/js/language.js"></script>
