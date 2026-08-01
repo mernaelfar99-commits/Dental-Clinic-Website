@@ -1,6 +1,6 @@
 # Dental-Clinic-Website
 
-A luxury, cinematic, bilingual (Arabic/English) website for **Dr. Abdurahman Moheb Amer** — Cosmetic, Restorative & Oral Surgery Dentist.
+A luxury, cinematic, bilingual (Arabic/English) website for **Dr. Abdurahman Moheb** — Cosmetic, Restorative & Oral Surgery Dentist.
 
 Static site — no build step required. Ready to deploy directly to **Vercel**, **Netlify**, GitHub Pages, or any static host.
 
@@ -115,4 +115,4 @@ Dental-Clinic-Website/
 
 ---
 
-© 2026 Dr. Abdurahman Moheb Amer — All Rights Reserved.
+© 2026 Dr. Abdurahman Moheb — All Rights Reserved.
