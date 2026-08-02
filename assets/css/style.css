@@ -466,7 +466,12 @@ html[dir="ltr"] h4 {
 
 /* ---------- Hero ---------- */
 .hero {
+  /* viewport fallbacks: normal, small/large svh/dvh and Safari fill-available */
   min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  height: -webkit-fill-available;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -474,6 +479,7 @@ html[dir="ltr"] h4 {
   background: linear-gradient(90deg, rgba(13,33,55,0.86) 0%, rgba(13,33,55,0.6) 30%, rgba(13,33,55,0.25) 50%, transparent 70%), url("../images/hero/hero-clinic-branding.jpg") left center/cover no-repeat, radial-gradient(ellipse at top, rgba(212, 175, 55, 0.15), transparent 60%), linear-gradient(160deg, #fff 0%, var(--color-ivory) 60%);
   overflow: hidden;
   text-align: center;
+  will-change: transform, opacity;
 }
 
 .hero::before,
@@ -489,6 +495,8 @@ html[dir="ltr"] h4 {
   background: radial-gradient(circle, rgba(212, 175, 55, 0.25), transparent 70%);
   top: -150px;
   right: -150px;
+  will-change: transform, opacity;
+  -webkit-transform: translateZ(0);
 }
 
 .hero::after {
@@ -497,6 +505,8 @@ html[dir="ltr"] h4 {
   background: radial-gradient(circle, rgba(230, 210, 162, 0.3), transparent 70%);
   bottom: -150px;
   left: -150px;
+  will-change: transform, opacity;
+  -webkit-transform: translateZ(0);
 }
 
 .hero-content {
@@ -508,6 +518,7 @@ html[dir="ltr"] h4 {
   text-shadow: 0 2px 8px rgba(0,0,0,0.4);
   text-align: left;
   margin-inline-start: 8vw;
+  -webkit-font-smoothing: antialiased;
 }
 
 .hero h1 {
@@ -803,7 +814,12 @@ html[dir="ltr"] h4 {
 
 .ba-after {
   background: linear-gradient(135deg, var(--color-champagne), #fff);
-  clip-path: inset(0 50% 0 0);
+  /* use width for performant reveal instead of clip-path */
+  left: 0;
+  right: auto;
+  width: 50%;
+  overflow: hidden;
+  will-change: width, transform;
 }
 
 .ba-before img,
@@ -822,6 +838,8 @@ html[dir="ltr"] h4 {
   left: 50%;
   cursor: ew-resize;
   transform: translateX(-2px);
+  will-change: transform;
+  -webkit-transform: translateZ(0);
 }
 
 .ba-slider::after {
