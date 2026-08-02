@@ -67,6 +67,8 @@
 
   .hero-content {
     padding: 92px 18px 44px;
+    margin-inline-start: 0;
+    text-align: center;
   }
 
   .hero h1 {
