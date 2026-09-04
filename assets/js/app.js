@@ -15,7 +15,8 @@
       navbar.classList.toggle('scrolled', window.scrollY > 40);
     };
 
-    window.addEventListener('scroll', onScroll);
+    // passive listener for better scroll performance
+    window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
 
@@ -39,9 +40,20 @@
     const toTop = document.getElementById('toTop');
     if (!toTop) return;
 
+    // use RAF to batch DOM writes on scroll
+    let ticking = false;
+    const updateToTop = () => {
+      const y = window.scrollY;
+      toTop.style.display = y > 500 ? 'flex' : 'none';
+      ticking = false;
+    };
+
     window.addEventListener('scroll', () => {
-      toTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
-    });
+      if (!ticking) {
+        window.requestAnimationFrame(updateToTop);
+        ticking = true;
+      }
+    }, { passive: true });
 
     toTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -68,27 +80,57 @@
     const after = document.getElementById('ba-after');
     if (!slider || !after) return;
 
+    // Use pointer events + RAF to reduce layout thrashing
     let dragging = false;
+    let pendingX = null;
+    const wrap = slider.parentElement;
 
-    const setPosition = (clientX) => {
-      const wrap = slider.parentElement.getBoundingClientRect();
-      let pct = ((clientX - wrap.left) / wrap.width) * 100;
+    const applyPosition = () => {
+      if (pendingX === null) return;
+      const rect = wrap.getBoundingClientRect();
+      let pct = ((pendingX - rect.left) / rect.width) * 100;
       pct = Math.max(0, Math.min(100, pct));
+      // update width of after (more performant than clip-path)
+      after.style.width = pct + '%';
+      // position slider using transform to avoid layout where possible
       slider.style.left = pct + '%';
-      after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      pendingX = null;
     };
 
-    slider.addEventListener('mousedown', () => (dragging = true));
-    window.addEventListener('mouseup', () => (dragging = false));
-    window.addEventListener('mousemove', (e) => {
-      if (dragging) setPosition(e.clientX);
+    const schedule = () => {
+      if (pendingX === null) return;
+      requestAnimationFrame(applyPosition);
+    };
+
+    const onPointerMove = (clientX) => {
+      pendingX = clientX;
+      if (pendingX !== null) schedule();
+    };
+
+    slider.addEventListener('pointerdown', (e) => {
+      dragging = true;
+      slider.setPointerCapture && slider.setPointerCapture(e.pointerId);
     });
 
+    window.addEventListener('pointerup', () => {
+      dragging = false;
+      pendingX = null;
+    });
+
+    window.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      e.preventDefault();
+      onPointerMove(e.clientX);
+    });
+
+    // touch fallback for older browsers
     slider.addEventListener('touchstart', () => (dragging = true));
     window.addEventListener('touchend', () => (dragging = false));
     window.addEventListener('touchmove', (e) => {
-      if (dragging && e.touches[0]) setPosition(e.touches[0].clientX);
-    });
+      if (dragging && e.touches && e.touches[0]) {
+        onPointerMove(e.touches[0].clientX);
+      }
+    }, { passive: false });
   }
 
   /* ---------- Before / After category tabs ---------- */

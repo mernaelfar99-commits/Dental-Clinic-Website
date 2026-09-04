@@ -12,24 +12,24 @@
     const lang = document.documentElement.getAttribute('lang') || 'ar';
     if (lang === 'ar') {
       return (
-        `مرحبًا، أرغب في حجز موعد:%0A` +
-        `الاسم: ${data.name}%0A` +
-        `الهاتف: ${data.phone}%0A` +
-        `الفرع: ${data.branch}%0A` +
-        `الخدمة: ${data.treatment}%0A` +
-        `التاريخ المفضل: ${data.date}%0A` +
-        `الوقت المفضل: ${data.time}%0A` +
+        `مرحبًا، أرغب في حجز موعد:\n` +
+        `الاسم: ${data.name}\n` +
+        `الهاتف: ${data.phone}\n` +
+        `الفرع: ${data.branch}\n` +
+        `الخدمة: ${data.treatment}\n` +
+        `التاريخ المفضل: ${data.date}\n` +
+        `الوقت المفضل: ${data.time}\n` +
         `ملاحظات: ${data.notes}`
       );
     }
     return (
-      `Hello, I would like to book an appointment:%0A` +
-      `Name: ${data.name}%0A` +
-      `Phone: ${data.phone}%0A` +
-      `Branch: ${data.branch}%0A` +
-      `Treatment: ${data.treatment}%0A` +
-      `Preferred Date: ${data.date}%0A` +
-      `Preferred Time: ${data.time}%0A` +
+      `Hello, I would like to book an appointment:\n` +
+      `Name: ${data.name}\n` +
+      `Phone: ${data.phone}\n` +
+      `Branch: ${data.branch}\n` +
+      `Treatment: ${data.treatment}\n` +
+      `Preferred Date: ${data.date}\n` +
+      `Preferred Time: ${data.time}\n` +
       `Notes: ${data.notes}`
     );
   }
@@ -71,6 +71,16 @@
       } catch (err) {
         /* sessionStorage unavailable — ignore */
       }
+      // After successful validation and showing success animation,
+      // also open WhatsApp with the prebuilt message so the user can send booking details.
+      try {
+        const message = buildWhatsAppMessage(data);
+        const url = `https://wa.me/${CLINIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+      } catch (err) {
+        // Do not break the success flow if opening WhatsApp fails.
+        console.warn('Unable to open WhatsApp link', err);
+      }
     });
 
     // Wire up any "Book via WhatsApp" buttons near the form to prefill the message
@@ -79,7 +89,8 @@
         e.preventDefault();
         const data = getFormData(form);
         const message = buildWhatsAppMessage(data);
-        window.open(`https://wa.me/${CLINIC_WHATSAPP_NUMBER}?text=${message}`, '_blank');
+        // encode once when building the wa.me URL so whitespace/newlines are preserved
+        window.open(`https://wa.me/${CLINIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
       });
     });
   }

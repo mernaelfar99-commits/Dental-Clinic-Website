@@ -9,7 +9,9 @@
     const loader = document.getElementById('loader');
     if (!loader) return;
 
-    for (let i = 0; i < 18; i++) {
+    // reduce particle count on small screens to save memory/paint
+    const particleCount = window.innerWidth < 768 ? 6 : 18;
+    for (let i = 0; i < particleCount; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
       const size = Math.random() * 4 + 2;
@@ -34,6 +36,7 @@
     const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     if (!targets.length) return;
 
+    // Observe with small rootMargin so elements animate slightly before fully visible
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,7 +46,7 @@
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
     );
 
     targets.forEach((t) => io.observe(t));
@@ -89,9 +92,24 @@
     io.observe(statsSection);
   }
 
+  /* ---------- Lazy images ---------- */
+  function initLazyImages() {
+    if ('loading' in HTMLImageElement.prototype) {
+      document.querySelectorAll('img').forEach((img) => {
+        // skip loader/logo/critical images
+        if (img.closest('#loader') || img.closest('.brand') || img.closest('.navbar')) return;
+        if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+      });
+    } else if (window.IntersectionObserver) {
+      // optional polyfill behavior could be added here
+      // keep default behavior for older browsers
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initLoader();
     initReveal();
     initCounters();
+    initLazyImages();
   });
 })();
