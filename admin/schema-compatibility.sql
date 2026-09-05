@@ -1,0 +1,2 @@
+-- Superseded by FINAL-SUPABASE-SETUP.sql.
+-- Run admin/FINAL-SUPABASE-SETUP.sql as the single consolidated migration.
