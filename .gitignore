@@ -1,0 +1,4 @@
+.env
+.env.local
+.env.*.local
+admin/config.local.js

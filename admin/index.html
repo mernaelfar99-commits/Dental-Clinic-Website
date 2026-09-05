@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Private administration dashboard for Dr. Abdurahman Moheb Dental Clinic.">
+  <title>Clinic Admin | Dr. Abdurahman Moheb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <div id="login-view" class="auth-view">
+    <main class="auth-card" aria-labelledby="login-title">
+      <div class="brand-mark" aria-hidden="true">DM<span>+</span></div>
+      <p class="eyebrow" data-i18n="adminLabel">CLINIC ADMINISTRATION</p>
+      <h1 id="login-title" data-i18n="welcomeBack">Welcome back</h1>
+      <p class="muted" data-i18n="loginIntro">Sign in to manage your clinic workspace.</p>
+      <form id="login-form" class="form-stack">
+        <label for="login-email" data-i18n="email">Email</label>
+        <input id="login-email" name="email" type="email" autocomplete="email" required>
+        <label for="login-password" data-i18n="password">Password</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="button button-primary" type="submit" data-i18n="signIn">Sign in</button>
+        <p id="login-message" class="form-message" role="alert" hidden></p>
+      </form>
+      <button class="language-button" type="button" data-language-toggle>العربية</button>
+    </main>
+  </div>
+
+  <div id="dashboard-view" class="dashboard-view" hidden>
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark" aria-hidden="true">DM<span>+</span></div>
+        <div><strong>Dr. Moheb</strong><small data-i18n="clinicAdmin">Clinic Admin</small></div>
+      </div>
+      <nav class="sidebar-nav" aria-label="Dashboard navigation">
+        <button class="nav-item active" type="button" data-section="overview" data-i18n="overview">Overview</button>
+        <button class="nav-item" type="button" data-section="appointments" data-i18n="appointments">Appointments</button>
+        <button class="nav-item" type="button" data-section="patients" data-i18n="patients">Patients</button>
+        <button class="nav-item" type="button" data-section="services" data-i18n="services">Services</button>
+        <button class="nav-item" type="button" data-section="gallery" data-i18n="gallery">Gallery</button>
+        <button class="nav-item" type="button" data-section="doctor" data-i18n="doctorProfile">Doctor profile</button>
+        <button class="nav-item" type="button" data-section="settings" data-i18n="clinicSettings">Clinic settings</button>
+        <button class="nav-item" type="button" data-section="messages" data-i18n="messages">Messages</button>
+      </nav>
+      <button id="logout-button" class="logout-button" type="button" data-i18n="logout">Log out</button>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="topbar">
+        <button id="menu-button" class="icon-button" type="button" aria-label="Toggle menu">☰</button>
+        <div><p class="eyebrow" data-i18n="privateWorkspace">PRIVATE WORKSPACE</p><h1 id="page-title" data-i18n="overview">Overview</h1></div>
+        <div class="topbar-actions"><button class="language-button" type="button" data-language-toggle>العربية</button><span id="admin-email" class="admin-email"></span></div>
+      </header>
+      <main id="dashboard-content" class="dashboard-content" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div id="configuration-view" class="screen-message" hidden>
+    <div class="message-card"><div class="brand-mark">DM<span>+</span></div><h1 data-i18n="configurationRequired">Configuration required</h1><p data-i18n="configurationHelp">The local Supabase configuration could not be loaded. Confirm that the root .env.local file is available to your local web server.</p></div>
+  </div>
+  <div id="loading-view" class="screen-message"><p data-i18n="loading">Loading secure workspace...</p></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.local.js"></script>
+  <script src="./admin.js"></script>
+</body>
+</html>
